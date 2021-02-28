@@ -11,5 +11,13 @@
   <author email="tlasguigne@laas.fr">Thibaud Lasguignes</author>
   <maintainer email="guilhem.saurel@laas.fr">Guilhem Saurel</maintainer>
   <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+
+  <export>
+    <gazebo_ros gazebo_model_path="${prefix}/models"/>
+  </export>
 
 </package>
