@@ -1,3 +1,4 @@
+<?xml version='1.0'?>
 <sdf version='1.7'>
   <model name='os1_32'>
     <link name='base_footprint_link'>
