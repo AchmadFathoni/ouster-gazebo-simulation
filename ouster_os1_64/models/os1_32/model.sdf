@@ -45,6 +45,8 @@
           <frameName>os_imu</frameName>
           <initialOrientationAsReference>false</initialOrientationAsReference>
         </plugin>
+        <!--Flip the reading but not the sensor body-->
+        <pose>0 0 0 0 1.57 0</pose>
       </sensor>
       <gravity>1</gravity>
       <velocity_decay/>
@@ -84,7 +86,8 @@
           <max_range>100</max_range>
           <gaussianNoise>0.008</gaussianNoise>
         </plugin>
-        <pose>0 0 0 0 -0 0</pose>
+        <!--Flip the reading but not the sensor body-->
+        <pose>0 0 0 0 1.57 0</pose>
       </sensor>
     </link>
   </model>
