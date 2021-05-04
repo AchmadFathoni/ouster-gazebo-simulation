@@ -33,21 +33,21 @@
         </geometry>
       </visual>
       <velocity_decay/>
-      <sensor name='ouster_imu_sensor' type='imu'>
-        <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
-          <robotNamespace>/</robotNamespace>
-          <topicName>/imu</topicName>
-          <bodyName>base_footprint_link</bodyName>
-          <updateRateHZ>100.0</updateRateHZ>
-          <gaussianNoise>0.0</gaussianNoise>
-          <xyzOffset>0 0 0</xyzOffset>
-          <rpyOffset>0 0 0</rpyOffset>
-          <frameName>os_imu</frameName>
-          <initialOrientationAsReference>false</initialOrientationAsReference>
-        </plugin>
-        <!--Flip the reading but not the sensor body-->
-        <pose>0 0 0 0 1.57 0</pose>
-      </sensor>
+      <!--<sensor name='ouster_imu_sensor' type='imu'>-->
+        <!--<plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">-->
+          <!--<robotNamespace>/</robotNamespace>-->
+          <!--<topicName>/imu</topicName>-->
+          <!--<bodyName>base_footprint_link</bodyName>-->
+          <!--<updateRateHZ>100.0</updateRateHZ>-->
+          <!--<gaussianNoise>0.0</gaussianNoise>-->
+          <!--<xyzOffset>0 0 0</xyzOffset>-->
+          <!--<rpyOffset>0 0 0</rpyOffset>-->
+          <!--<frameName>os_imu</frameName>-->
+          <!--<initialOrientationAsReference>false</initialOrientationAsReference>-->
+        <!--</plugin>-->
+        <!--[>Flip the reading but not the sensor body<]-->
+        <!--<pose>0 0 0 0 1.57 0</pose>-->
+      <!--</sensor>-->
       <gravity>1</gravity>
       <velocity_decay/>
       <sensor name='ouster_lidar' type='ray'>
@@ -80,14 +80,12 @@
           </noise>
         </ray>
         <plugin name='gazebo_ros_laser_controller' filename='libgazebo_ros_ouster_laser.so'>
-          <topicName>/points2</topicName>
+          <topicName>/filtered_points</topicName>
           <frameName>os_lidar</frameName>
           <min_range>0.8</min_range>
           <max_range>100</max_range>
           <gaussianNoise>0.008</gaussianNoise>
         </plugin>
-        <!--Flip the reading but not the sensor body-->
-        <pose>0 0 0 0 1.57 0</pose>
       </sensor>
     </link>
   </model>
